@@ -1,5 +1,5 @@
 --- # When playbook example
-- hosts: demo
+- hosts: all
   user: ansible
   sudo: yes
   connection: ssh
