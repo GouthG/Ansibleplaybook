@@ -1,15 +1,6 @@
 ---
- - hosts: all
+ - hosts: automationtest
    gather_facts: true
    tasks:
      - name: user Info
        shell: uname -a
-       register: output
-     - debug: var=output.stdout_lines
-     - name: Os version
-       shell: cat /etc/redhat-release
-       register: osversion
-     - debug: var=osversion.stdout_lines- name: Os version
-       shell: cat /etc/redhat-release
-       register: osversion
-     - debug: var=osversion.stdout_lines
