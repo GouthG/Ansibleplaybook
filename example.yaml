@@ -1,6 +1,6 @@
----
- - hosts: automationtest
-   gather_facts: true
-   tasks:
-     - name: user Info
-       shell: uname -a
+- name: Hello World Sample
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
