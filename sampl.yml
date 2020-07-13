@@ -3,14 +3,17 @@
    gather_facts: true
   #become: true
    tasks:
+     - name: check space
+       command: "{{ readvalue }}"
+       register: space
      - name: user Info
        shell: uname -a
 #       register: output
  #    - debug: var=output.stdout_lines
-     - name: Os version
-       shell: cat /etc/redhat-release
+     #- name: Os version
+      # shell: cat /etc/redhat-release
   #     register: osversion
    #  - debug: var=osversion.stdout_lines- name: Os version
-       shell: cat /etc/redhat-release
+       #shell: cat /etc/redhat-release
     #   register: osversion
-     #- debug: var=osversion.stdout_lines
+     - debug: var=space.stdout_lines
