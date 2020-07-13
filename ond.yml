@@ -1,10 +1,10 @@
 --- # When playbook example
 - hosts: "{{ hostname }}"
   tasks:
-    - name: Install apache for debian
-      command: echo "df -h"
+    - name: register value 
+      command: echo "{{ input1 }}"
       register: output    
-    - name: Install apache for redhat
+    - name: convert variable value
       set_stats: 
         data:
           readvalue: "{{ (output.stdout|from_json).link }}"
