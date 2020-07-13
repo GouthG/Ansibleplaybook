@@ -16,4 +16,4 @@
    #  - debug: var=osversion.stdout_lines- name: Os version
        #shell: cat /etc/redhat-release
     #   register: osversion
-     - debug: var=space.stdout_lines
+     - debug: var=space.stdout
