@@ -1,12 +1,10 @@
 --- # When playbook example
-- hosts: all
-  user: ansible
-  sudo: yes
-  connection: ssh
+- hosts: "{{ hostname }}"
   tasks:
     - name: Install apache for debian
-      command: apt-get -y install apache2
-      when: ansible_os_family == "Debian"
+      command: echo "df -h"
+      register: output    
     - name: Install apache for redhat
-      command: yum -y install httpd
-      when: ansible_os_family == "RedHat
+      set_stats: 
+        data:
+          readvalue: "{{ (output.stdout|from_json).link }}"
